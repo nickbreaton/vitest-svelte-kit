@@ -1,0 +1,16 @@
+{
+    "name": "vitest-sveltekit",
+    "version": "1.0.0",
+    "description": "Automatically configure Vitest from your SvelteKit confguration.",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.js"
+    },
+    "devDependencies": {
+        "@sveltejs/kit": "^1.0.0-next.202",
+        "vite": "^2.7.6"
+    },
+    "dependencies": {
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.32"
+    }
+}
