@@ -17,8 +17,14 @@ const config = {
 		vite: {
 			plugins: [
 				content.default()
-			]
-		}
+			],
+
+			resolve: {
+				alias: {
+					lodash: 'lodash-es'
+				}
+			}
+		},
 	}
 };
 

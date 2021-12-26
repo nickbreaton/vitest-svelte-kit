@@ -22,5 +22,8 @@
     "vitest": "^0.0.113",
     "vitest-sveltekit": "workspace:^1.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
 }
