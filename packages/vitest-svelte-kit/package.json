@@ -7,7 +7,6 @@
         ".": "./src/index.js"
     },
     "devDependencies": {
-        "@sveltejs/kit": "^1.0.0-next.202",
         "vite": "^2.7.6"
     },
     "dependencies": {
