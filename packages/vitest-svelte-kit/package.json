@@ -1,5 +1,5 @@
 {
-    "name": "vitest-sveltekit",
+    "name": "vitest-svelte-kit",
     "version": "1.0.0",
     "description": "Automatically configure Vitest from your SvelteKit confguration.",
     "type": "module",
