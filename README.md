@@ -6,8 +6,10 @@ Automatically configure Vitest from your Svelte Kit configuration.
 
 ### Installing
 
+In an existing Svelte Kit project, run the followng.
+
 ```sh
-npm i -D vitest vitest-svelte-kit
+npm i -D vite vitest vitest-svelte-kit
 ```
 
 ### Configuring
