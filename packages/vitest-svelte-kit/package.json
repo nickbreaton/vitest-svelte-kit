@@ -4,12 +4,21 @@
     "description": "Automatically configure Vitest from your SvelteKit confguration.",
     "type": "module",
     "exports": {
-        ".": "./src/index.js"
+        ".": "./build/index.js"
     },
-    "devDependencies": {
-        "vite": "^2.7.6"
+    "types": "./build/index.d.ts",
+    "scripts": {
+        "build": "rimraf ./build && tsc"
     },
     "dependencies": {
         "@sveltejs/vite-plugin-svelte": "^1.0.0-next.32"
+    },
+    "devDependencies": {
+        "@sveltejs/kit": "^1.0.0-next.203",
+        "rimraf": "^3.0.2",
+        "svelte": "^3.44.3",
+        "typescript": "^4.5.4",
+        "vite": "^2.7.6",
+        "vitest": "^0.0.115"
     }
 }

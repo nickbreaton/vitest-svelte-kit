@@ -1,0 +1,18 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "module": "es2020",
+        "target": "es2020",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "outDir": "build",
+        "declaration": true,
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
+}
