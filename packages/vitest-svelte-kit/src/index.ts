@@ -2,6 +2,7 @@ import vite, { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import path from 'path'
 import fs from 'fs'
+import { fileURLToPath} from 'url'
 
 import type { Config as SvelteConfig } from '@sveltejs/kit'
 
@@ -43,16 +44,20 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     const svelteConfigFile = await resolveSvelteConfigFile()
     const svelteConfigDir = path.dirname(svelteConfigFile)
 
-    /** @type import('@sveltejs/kit').Config */
-    const svelteConfig = await import(svelteConfigFile).then(module => module.default)
+    const svelteConfig: any = await import(svelteConfigFile).then(module => module.default)
+
+    // const viteConfig = svelteConfig.kit?.vite
 
     // plugins cannot be injected via the `config` hook, so we must pull out ahead of time
+    // TODO: handle `vite` as a function
     const { plugins = [], ...extractedViteConfig } = svelteConfig.kit?.vite ?? {}
 
     const $lib = makeAbsolute(
         svelteConfigDir,
         svelteConfig.kit?.files?.lib ?? './src/lib'
     )
+
+    let viteEnv: vite.ConfigEnv
 
     return defineConfig({
         plugins: [
@@ -66,13 +71,33 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
             },
             {
                 name: 'vitest-svelte-kit:kit-emulator',
-                config() {
+                config(_, env) {
+                    viteEnv = env
                     return {
                         resolve: {
                             alias: {
-                                $lib
+                                $lib,
+                                '$app/env': 'vitest-svelte-kit:$app/env'
                             }
                         }
+                    }
+                },
+                resolveId(id) {
+                    if (id === 'vitest-svelte-kit:$app/env') {
+                        return id;
+                    }
+                },
+                load(file) {
+                    if (file === 'vitest-svelte-kit:$app/env') {
+                        console.log('load');
+                        // https://kit.svelte.dev/docs#modules-$app-env
+                        return `
+                            export const amp = ${JSON.stringify(svelteConfig.kit?.amp ?? false)};
+                            export const browser = typeof window !== 'undefined';
+                            export const dev = true;
+                            export const mode = ${JSON.stringify(viteEnv.mode ?? 'development')};
+                            export const prerendering = false;
+                        `
                     }
                 }
             },
