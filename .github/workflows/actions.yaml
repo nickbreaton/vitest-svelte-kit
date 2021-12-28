@@ -10,5 +10,5 @@ jobs:
         node-version: '16'
     - run: npm i -g pnpm
     - run: pnpm install
-    - run: pnpm boostrap
+    - run: pnpm bootstrap
     - run: pnpm test
