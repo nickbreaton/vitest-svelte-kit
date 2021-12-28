@@ -7,7 +7,7 @@ test('ensure $app/env is polyfilled', () => {
     expect(env).toMatchInlineSnapshot(`
 {
   "amp": false,
-  "browser": true,
+  "browser": false,
   "dev": true,
   "mode": "development",
   "prerendering": false,
