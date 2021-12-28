@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ROOT=$PWD
+
+cd $ROOT/packages/vitest-svelte-kit
+pnpm build
+
+for dir in $ROOT/tests/*/
+do
+    cd $dir
+
+    # remove any existing template files
+    git clean -Xf . *
+
+    # every test should have a setup script
+    ./setup.sh
+done
+
+pnpm install

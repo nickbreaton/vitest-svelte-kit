@@ -1,7 +1,8 @@
 {
+    "name": "@vitest-svelte-kit/workspace",
     "private": true,
     "scripts": {
-        "test": "scripts/test"
+        "bootstrap": "scripts/bootstrap"
     },
     "devDependencies": {
         "json": "^11.0.0"
