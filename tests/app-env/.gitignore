@@ -1,5 +1,5 @@
 /*
 !.gitignore
 !setup.sh
-!tests
+!*.test.ts
 !vitest.config.ts
