@@ -11,6 +11,9 @@
         "declaration": true,
         "skipLibCheck": true
     },
+    "include": [
+        "@types/node"
+    ],
     "exclude": [
         "node_modules",
         "build"
