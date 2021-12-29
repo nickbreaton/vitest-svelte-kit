@@ -2,5 +2,5 @@
 !.gitignore
 !*.test.ts
 !setup.sh
-!svelte.config.ts
+!svelte.config.js
 !vitest.config.ts
