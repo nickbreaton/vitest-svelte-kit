@@ -6,8 +6,8 @@ import * as env from '$app/env'
 test('ensure $app/env is polyfilled', () => {
     expect(env).toMatchInlineSnapshot(`
 {
-  "amp": false,
-  "browser": false,
+  "amp": true,
+  "browser": true,
   "dev": true,
   "mode": "development",
   "prerendering": false,

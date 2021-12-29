@@ -1,0 +1,6 @@
+/*
+!.gitignore
+!*.test.ts
+!setup.sh
+!svelte.config.ts
+!vitest.config.ts

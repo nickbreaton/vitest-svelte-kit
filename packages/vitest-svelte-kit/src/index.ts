@@ -89,7 +89,6 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                 },
                 load(file) {
                     if (file === 'vitest-svelte-kit:$app/env') {
-                        console.log('load');
                         // https://kit.svelte.dev/docs#modules-$app-env
                         return `
                             export const amp = ${JSON.stringify(svelteConfig.kit?.amp ?? false)};
