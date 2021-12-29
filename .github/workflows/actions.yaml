@@ -11,4 +11,4 @@ jobs:
     - run: npm i -g pnpm
     - run: pnpm install
     - run: pnpm bootstrap
-    - run: pnpm -r test
+    - run: pnpm tests
