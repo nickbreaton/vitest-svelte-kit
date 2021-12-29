@@ -31,6 +31,7 @@ To learn more about how you can configure Vitest, visit the [Configuring Vitest]
 This package aims to either emulate or mock any Svelte Kit specific behavior. This includes:
 
 1. Svelte file support
+1. Svelte config embedded Vite configuration
 1. `$lib` mapping
 1. `$app/env` polyfill
 1. `$app/stores` mocking
