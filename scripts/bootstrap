@@ -2,18 +2,28 @@
 
 ROOT=$PWD
 
+pnpm install
+
 cd $ROOT/packages/vitest-svelte-kit
 pnpm build
 
-for dir in $ROOT/tests/*/
-do
-    cd $dir
-
+boostrap() {
     # remove any existing template files
     git clean -Xf . *
 
     # every test should have a setup script
     ./setup.sh
-done
+}
+
+if [ -z "$1" ]
+then
+    for dir in $ROOT/tests/*/
+    do
+        cd $dir
+        boostrap
+    done
+else
+    cd $ROOT/tests/$1 && boostrap
+fi
 
 pnpm install
