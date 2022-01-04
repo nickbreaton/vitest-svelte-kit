@@ -1,3 +1,5 @@
-!content.yaml
+!fixtures
+!setup.sh
 !svelte.config.js
+!vite-plugins.test.ts
 !vitest.config.ts

@@ -1,2 +1,3 @@
-!*.test.ts
+!app-env.test.ts
+!setup.sh
 !vitest.config.ts

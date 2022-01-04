@@ -1,8 +1,5 @@
 node_modules
 *.log
 
-/tests/*/*
-!/tests/*/.gitignore
-!/tests/*/setup.sh
-!/tests/*/*.test.js
-!/tests/*/*.test.ts
+tests/*/*
+!tests/*/.gitignore
