@@ -1,0 +1,7 @@
+!src
+src/*
+!src/lib2
+!setup.sh
+!svelte.config.js
+!vite-alias.test.js
+!vitest.config.js

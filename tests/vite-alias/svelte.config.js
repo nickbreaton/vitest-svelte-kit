@@ -1,6 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import content from '@originjs/vite-plugin-content';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,16 +14,12 @@ const config = {
 		target: '#svelte',
 
 		vite: {
-			plugins: [
-				content.default()
-			],
-
 			resolve: {
 				alias: {
-					lodash: 'lodash-es'
+					$lib2: './src/lib2'
 				}
 			}
-		},
+		}
 	}
 };
 

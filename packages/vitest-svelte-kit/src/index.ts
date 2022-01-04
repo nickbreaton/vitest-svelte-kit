@@ -62,7 +62,6 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     return defineConfig({
         plugins: [
             svelte({ hot: false }),
-            ...plugins,
             {
                 name: 'vitest-svelte-kit:extracted-config',
                 config() {
@@ -100,6 +99,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                     }
                 }
             },
+            ...plugins,
         ]
     })
 }

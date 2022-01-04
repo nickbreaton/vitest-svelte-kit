@@ -71,6 +71,32 @@ importers:
       tslib: 2.3.1
       typescript: 4.5.4
 
+  tests/vite-alias:
+    specifiers:
+      '@originjs/vite-plugin-content': ^1.0.1
+      '@sveltejs/adapter-auto': next
+      '@sveltejs/kit': next
+      svelte: ^3.44.0
+      svelte-check: ^2.2.6
+      svelte-preprocess: ^4.9.4
+      tslib: ^2.3.1
+      typescript: ^4.4.3
+      vite: ^2.7.10
+      vitest: ^0.0.115
+      vitest-svelte-kit: workspace:^1.0.0
+    devDependencies:
+      '@originjs/vite-plugin-content': 1.0.1
+      '@sveltejs/adapter-auto': 1.0.0-next.7
+      '@sveltejs/kit': 1.0.0-next.215_svelte@3.44.3
+      svelte: 3.44.3
+      svelte-check: 2.2.11_svelte@3.44.3
+      svelte-preprocess: 4.10.1_svelte@3.44.3+typescript@4.5.4
+      tslib: 2.3.1
+      typescript: 4.5.4
+      vite: 2.7.10
+      vitest: 0.0.115_vite@2.7.10
+      vitest-svelte-kit: link:../../packages/vitest-svelte-kit
+
   tests/vite-plugins:
     specifiers:
       '@originjs/vite-plugin-content': ^1.0.1
