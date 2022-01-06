@@ -56,6 +56,11 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
 
     let viteEnv: vite.ConfigEnv
 
+    const svelteKitAppAliases = {
+        "$app/env": "vitest-svelte-kit:$app/env",
+        "$app/paths": "vitest-svelte-kit:$app/paths",
+    }
+
     return defineConfig({
         plugins: [
             svelte({ hot: false }),
@@ -67,18 +72,18 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                         resolve: {
                             alias: {
                                 $lib,
-                                "$app/env": "vitest-svelte-kit:$app/env",
+                                ...svelteKitAppAliases,
                             },
                         },
                     }
                 },
                 resolveId(id) {
-                    if (id === "vitest-svelte-kit:$app/env") {
+                    if (Object.values(svelteKitAppAliases).includes(id)) {
                         return id
                     }
                 },
                 load(file) {
-                    if (file === "vitest-svelte-kit:$app/env") {
+                    if (file === svelteKitAppAliases["$app/env"]) {
                         // https://kit.svelte.dev/docs#modules-$app-env
                         return `
                             export const amp = ${JSON.stringify(svelteConfig.kit?.amp ?? false)};
@@ -86,6 +91,14 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const dev = true;
                             export const mode = ${JSON.stringify(viteEnv.mode ?? "development")};
                             export const prerendering = false;
+                        `
+                    }
+                    if (file === svelteKitAppAliases["$app/paths"]) {
+                        // https://kit.svelte.dev/docs#modules-$app-paths
+                        const base = svelteConfig?.kit?.paths?.base ?? ""
+                        return `
+                            export const base = ${JSON.stringify(base)};
+                            export const assets = ${JSON.stringify(svelteConfig?.kit?.paths?.assets ?? base)};
                         `
                     }
                 },

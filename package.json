@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "bootstrap": "zx scripts/bootstrap.mjs",
-        "test": "zx scripts/test.mjs"
+        "test": "zx scripts/test.mjs",
+        "quicktest": "zx scripts/quicktest.mjs"
     },
     "devDependencies": {
         "prettier": "^2.5.1",
