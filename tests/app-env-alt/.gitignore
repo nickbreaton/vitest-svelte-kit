@@ -1,4 +1,2 @@
-!app-env-alt.test.ts
-!setup.sh
 !svelte.config.js
-!vitest.config.ts
+!vitest.config.js

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for dir in $PWD/tests/*/
-do
-    cd $dir
-    pnpm test
-done

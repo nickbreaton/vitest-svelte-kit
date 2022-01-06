@@ -1,11 +1,12 @@
 {
     "name": "@vitest-svelte-kit/workspace",
     "private": true,
+    "type": "module",
     "scripts": {
-        "bootstrap": "scripts/bootstrap",
-        "tests": "scripts/tests"
+        "bootstrap": "zx scripts/bootstrap.mjs",
+        "test": "zx scripts/test.mjs"
     },
     "devDependencies": {
-        "json": "^11.0.0"
+        "zx": "^4.2.0"
     }
 }
