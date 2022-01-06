@@ -1,5 +1,3 @@
-/// <reference types="@sveltejs/kit" />
-
 import { test, expect } from 'vitest'
 import * as env from '$app/env'
 
