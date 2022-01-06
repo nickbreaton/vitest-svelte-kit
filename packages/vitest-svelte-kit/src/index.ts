@@ -63,12 +63,6 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
         plugins: [
             svelte({ hot: false }),
             {
-                name: 'vitest-svelte-kit:extracted-config',
-                config() {
-                    return extractedViteConfig
-                }
-            },
-            {
                 name: 'vitest-svelte-kit:kit-emulator',
                 config(_, env) {
                     viteEnv = env
@@ -97,6 +91,12 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const prerendering = false;
                         `
                     }
+                }
+            },
+            {
+                name: 'vitest-svelte-kit:extracted-config',
+                config() {
+                    return extractedViteConfig
                 }
             },
             ...plugins,
