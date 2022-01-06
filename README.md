@@ -17,7 +17,7 @@ npm i -D vite vitest vitest-svelte-kit
 Create a file called `vitest.config.js` and add the following.
 
 ```js
-import { extractFromSvelteConfig } from 'vitest-svelte-kit'
+import { extractFromSvelteConfig } from "vitest-svelte-kit"
 
 export default extractFromSvelteConfig()
 ```
