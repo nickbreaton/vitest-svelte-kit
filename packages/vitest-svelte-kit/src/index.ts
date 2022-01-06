@@ -96,9 +96,10 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                     if (file === svelteKitAppAliases["$app/paths"]) {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
+                        const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
                         return `
                             export const base = ${JSON.stringify(base)};
-                            export const assets = ${JSON.stringify(svelteConfig?.kit?.paths?.assets ?? base)};
+                            export const assets = ${JSON.stringify(assets)};
                         `
                     }
                 },
