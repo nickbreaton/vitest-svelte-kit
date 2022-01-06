@@ -1,5 +1,7 @@
 import 'zx/globals'
 
+await $`pnpm build --filter ./packages`
+
 const root = process.cwd()
 const testDirs = await fs.promises.readdir('./tests')
 
