@@ -6,10 +6,8 @@ const root = process.cwd()
 const testDirs = await fs.promises.readdir('./tests')
 
 for (const testDir of testDirs) {
-    const name = `@vitest-svelte-kit/${testDir}`
-    console.log('\n\n' + chalk.black.bgWhite(' BOOTSTRAP ') + ` ${name}\n`)
-
     process.chdir(path.resolve(root, `./tests/${testDir}`))
+    console.log('\n\n' + chalk.cyan(' BOOTSTRAP ') + ` ${process.cwd()}\n`)
 
     // load configuration
     const bootstrapFile = path.resolve(process.cwd(), 'vitest-svelte-kit.boot.mjs')
@@ -25,6 +23,7 @@ for (const testDir of testDirs) {
     await $`cp -rn ${absoluteTemplateFiles} . || true`
 
     // modify package.json
+    const name = `@vitest-svelte-kit/${testDir}`
     const pkg = JSON.parse(await fs.promises.readFile('package.json', 'utf-8'))
     pkg.name = name
     pkg.private = true
