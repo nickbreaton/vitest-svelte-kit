@@ -3,7 +3,8 @@ import 'zx/globals'
 await $`pnpm build --filter ./packages`
 
 const root = process.cwd()
-const testDirs = await fs.promises.readdir('./tests')
+const passedArgs = process.argv.slice(3)
+const testDirs = passedArgs.length ? passedArgs : (await fs.promises.readdir('./tests'))
 
 for (const testDir of testDirs) {
     process.chdir(path.resolve(root, `./tests/${testDir}`))
@@ -14,7 +15,7 @@ for (const testDir of testDirs) {
     const module = await import(bootstrapFile)
 
     // remove prior template files
-    await $`git clean -Xf . *`
+    await $`git clean -Xf *`
 
     // copy template files
     const templateDir = path.resolve(__dirname, '../templates', module.template)
