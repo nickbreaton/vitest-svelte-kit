@@ -53,24 +53,6 @@ importers:
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-env-alt:
-    specifiers:
-      '@sveltejs/adapter-auto': next
-      '@sveltejs/kit': next
-      jsdom: ^19.0.0
-      svelte: ^3.45.0
-      vite: ^2.7.10
-      vitest: ^0.0.138
-      vitest-svelte-kit: workspace:^1.0.0
-    devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
-      jsdom: 19.0.0
-      svelte: 3.45.0
-      vite: 2.7.10
-      vitest: 0.0.138_jsdom@19.0.0
-      vitest-svelte-kit: link:../../packages/vitest-svelte-kit
-
   tests/app-navigation:
     specifiers:
       '@sveltejs/adapter-auto': next
