@@ -110,7 +110,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export function prefetchRoutes() { return Promise.resolve() }
                         `
                     }
-                    if (file === "$app/paths") {
+                    if (file === svelteKitModules["$app/paths"]) {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
                         const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
