@@ -65,6 +65,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     }
 
     return defineConfig({
+        ...extractedViteConfig,
         plugins: [
             svelte({ hot: false }),
             {
@@ -84,12 +85,15 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                     if (Object.values(svelteKitModules).includes(id)) {
                         return id
                     }
+                    if (id === "$app/paths") {
+                        return id
+                    }
                 },
                 load(file) {
                     if (file === svelteKitModules["$app/env"]) {
                         // https://kit.svelte.dev/docs#modules-$app-env
                         return `
-                            export const amp = ${JSON.stringify(svelteConfig.kit?.amp ?? false)};
+                            export const amp = false;
                             export const browser = typeof window !== 'undefined';
                             export const dev = true;
                             export const mode = ${JSON.stringify(viteEnv.mode ?? "development")};
@@ -106,7 +110,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export function prefetchRoutes() { return Promise.resolve() }
                         `
                     }
-                    if (file === svelteKitModules["$app/paths"]) {
+                    if (file === "$app/paths") {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
                         const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
@@ -119,7 +123,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                         // https://kit.svelte.dev/docs#modules-$app-stores
 
                         return `
-                            import { getContext, setContext } from 'svelte';
+                            import { getContext } from 'svelte';
                             import { readable, writable } from 'svelte/store';
 
                             const stores = {
@@ -157,12 +161,6 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const timestamp = Date.now();
                         `
                     }
-                },
-            },
-            {
-                name: "vitest-svelte-kit:extracted-config",
-                config() {
-                    return extractedViteConfig
                 },
             },
             ...plugins,

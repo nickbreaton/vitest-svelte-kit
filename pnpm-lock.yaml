@@ -25,7 +25,7 @@ importers:
       svelte: ^3.45.0
       typescript: ^4.5.4
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.34_svelte@3.45.0+vite@2.7.10
     devDependencies:
@@ -35,7 +35,7 @@ importers:
       svelte: 3.45.0
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
 
   tests/app-env:
     specifiers:
@@ -43,14 +43,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-env-alt:
@@ -60,7 +60,7 @@ importers:
       jsdom: ^19.0.0
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
@@ -68,7 +68,7 @@ importers:
       jsdom: 19.0.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136_jsdom@19.0.0
+      vitest: 0.0.138_jsdom@19.0.0
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-navigation:
@@ -77,14 +77,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-paths:
@@ -93,14 +93,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-paths-assets:
@@ -109,14 +109,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-paths-base:
@@ -125,14 +125,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/app-stores:
@@ -143,7 +143,7 @@ importers:
       jsdom: ^19.0.0
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
@@ -152,7 +152,7 @@ importers:
       jsdom: 19.0.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136_jsdom@19.0.0
+      vitest: 0.0.138_jsdom@19.0.0
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/service-worker:
@@ -161,14 +161,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/svelte-files:
@@ -179,7 +179,7 @@ importers:
       jsdom: ^19.0.0
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
@@ -188,7 +188,7 @@ importers:
       jsdom: 19.0.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136_jsdom@19.0.0
+      vitest: 0.0.138_jsdom@19.0.0
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/typescript:
@@ -202,7 +202,7 @@ importers:
       tslib: ^2.3.1
       typescript: ^4.5.4
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
@@ -214,7 +214,23 @@ importers:
       tslib: 2.3.1
       typescript: 4.5.4
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
+      vitest-svelte-kit: link:../../packages/vitest-svelte-kit
+
+  tests/vi-mock:
+    specifiers:
+      '@sveltejs/adapter-auto': next
+      '@sveltejs/kit': next
+      svelte: ^3.45.0
+      vite: ^2.7.10
+      vitest: ^0.0.138
+      vitest-svelte-kit: workspace:^1.0.0
+    devDependencies:
+      '@sveltejs/adapter-auto': 1.0.0-next.9
+      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      svelte: 3.45.0
+      vite: 2.7.10
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/vite-alias:
@@ -223,14 +239,14 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.9
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/vite-plugins:
@@ -240,7 +256,7 @@ importers:
       '@sveltejs/kit': next
       svelte: ^3.45.0
       vite: ^2.7.10
-      vitest: ^0.0.136
+      vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@originjs/vite-plugin-content': 1.0.1
@@ -248,7 +264,7 @@ importers:
       '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
-      vitest: 0.0.136
+      vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
 packages:
@@ -3181,8 +3197,8 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: true
 
-  /tinyspy/0.2.7:
-    resolution: {integrity: sha512-AaNITSED8/2j2/nSgPeQZW2nNhdTxNJ7XwcdBezI7MtPS2C+pJ1HjcHc/qfDhohUhQvODITdxzWH9u+Qs+7yFQ==}
+  /tinyspy/0.2.8:
+    resolution: {integrity: sha512-4VXqQzzh9gC5uOLk77cLr9R3wqJq07xJlgM9IUdCNJCet139r+046ETKbU1x7mGs7B0k7eopyH5U6yflbBXNyA==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -3346,8 +3362,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.136:
-    resolution: {integrity: sha512-l/FByRw+GNIckkAKMUib8HF5K+U3vmlrBOIl2ugt2FtMPvxSCKmRrbZWPmo3bbMzK1dekqSLILFp0v8WjNS5Lg==}
+  /vitest/0.0.138:
+    resolution: {integrity: sha512-AuCIKr5+oDWKCYbk14vl2VlAZ1V5Vjq8S80ZkpAQPsIRzgomoWOXzY1NVI+B8itXhz+Dznw34JcaeVXB/+/mrA==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
@@ -3370,7 +3386,7 @@ packages:
       chai: 4.3.4
       local-pkg: 0.4.1
       tinypool: 0.1.1
-      tinyspy: 0.2.7
+      tinyspy: 0.2.8
       vite: 2.7.10
     transitivePeerDependencies:
       - less
@@ -3378,8 +3394,8 @@ packages:
       - stylus
     dev: true
 
-  /vitest/0.0.136_jsdom@19.0.0:
-    resolution: {integrity: sha512-l/FByRw+GNIckkAKMUib8HF5K+U3vmlrBOIl2ugt2FtMPvxSCKmRrbZWPmo3bbMzK1dekqSLILFp0v8WjNS5Lg==}
+  /vitest/0.0.138_jsdom@19.0.0:
+    resolution: {integrity: sha512-AuCIKr5+oDWKCYbk14vl2VlAZ1V5Vjq8S80ZkpAQPsIRzgomoWOXzY1NVI+B8itXhz+Dznw34JcaeVXB/+/mrA==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
@@ -3403,7 +3419,7 @@ packages:
       jsdom: 19.0.0
       local-pkg: 0.4.1
       tinypool: 0.1.1
-      tinyspy: 0.2.7
+      tinyspy: 0.2.8
       vite: 2.7.10
     transitivePeerDependencies:
       - less
