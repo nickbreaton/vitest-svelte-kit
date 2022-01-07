@@ -58,8 +58,9 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
 
     const svelteKitModules = {
         "$app/env": "vitest-svelte-kit:$app/env",
-        "$app/paths": "vitest-svelte-kit:$app/paths",
         "$app/navigation": "vitest-svelte-kit:$app/navigation",
+        "$app/paths": "vitest-svelte-kit:$app/paths",
+        "$app/stores": "vitest-svelte-kit:$app/stores",
         "$service-worker": "vitest-svelte-kit:$service-worker",
     }
 
@@ -95,6 +96,16 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const prerendering = false;
                         `
                     }
+                    if (file === svelteKitModules["$app/navigation"]) {
+                        // https://kit.svelte.dev/docs#modules-$app-navigation
+                        return `
+                            export function disableScrollHandling() {}
+                            export function goto() { return Promise.resolve() }
+                            export function invalidate() { return Promise.resolve() }
+                            export function prefetch() { return Promise.resolve() }
+                            export function prefetchRoutes() { return Promise.resolve() }
+                        `
+                    }
                     if (file === svelteKitModules["$app/paths"]) {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
@@ -104,14 +115,38 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const assets = ${JSON.stringify(assets)};
                         `
                     }
-                    if (file === svelteKitModules["$app/navigation"]) {
-                        // https://kit.svelte.dev/docs#modules-$app-navigation
+                    if (file === svelteKitModules["$app/stores"]) {
+                        // https://kit.svelte.dev/docs#modules-$app-stores
+
                         return `
-                            export function disableScrollHandling() {}
-                            export function goto() { return Promise.resolve() }
-                            export function invalidate() { return Promise.resolve() }
-                            export function prefetch() { return Promise.resolve() }
-                            export function prefetchRoutes() { return Promise.resolve() }
+                            import { getContext, setContext } from 'svelte';
+                            import { readable, writable } from 'svelte/store';
+
+                            const stores = {
+                                navigating: readable(null),
+                                page: readable({ url: new URL('http://localhost'), params: {} }),
+                                session: writable(null)
+                            }
+
+                            function getStores() {
+                                // simulate context dependency
+                                getContext()
+                                return stores
+                            }
+
+                            export { getStores }
+
+                            export const navigating = {
+                                subscribe(fn) { return getStores().navigating.subscribe(fn) }
+                            }
+
+                            export const page = {
+                                subscribe(fn) { return getStores().page.subscribe(fn) }
+                            }
+
+                            export const session = {
+                                subscribe(fn) { return getStores().session.subscribe(fn) }
+                            }
                         `
                     }
                     if (file === svelteKitModules["$service-worker"]) {
