@@ -3,7 +3,7 @@ import * as env from "$app/env"
 
 test("ensure $app/env is polyfilled", () => {
     expect(env).toEqual({
-        amp: true,
+        amp: false,
         browser: true,
         dev: true,
         mode: "development",
