@@ -5,12 +5,14 @@
     "scripts": {
         "bootstrap": "zx scripts/bootstrap.mjs",
         "test": "zx scripts/test.mjs",
-        "buildtest": "zx scripts/buildtest.mjs"
+        "buildtest": "zx scripts/buildtest.mjs",
+        "ncu": "ncu --deep -u --target patch"
     },
     "devDependencies": {
+        "npm-check-updates": "^12.1.0",
         "prettier": "^2.5.1",
         "prettier-plugin-svelte": "^2.5.1",
-        "svelte": "^3.44.3",
+        "svelte": "^3.45.0",
         "zx": "^4.2.0"
     }
 }
