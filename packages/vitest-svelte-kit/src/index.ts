@@ -56,10 +56,11 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
 
     let viteEnv: vite.ConfigEnv
 
-    const svelteKitAppAliases = {
+    const svelteKitModules = {
         "$app/env": "vitest-svelte-kit:$app/env",
         "$app/paths": "vitest-svelte-kit:$app/paths",
         "$app/navigation": "vitest-svelte-kit:$app/navigation",
+        "$service-worker": "vitest-svelte-kit:$service-worker",
     }
 
     return defineConfig({
@@ -73,18 +74,18 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                         resolve: {
                             alias: {
                                 $lib,
-                                ...svelteKitAppAliases,
+                                ...svelteKitModules,
                             },
                         },
                     }
                 },
                 resolveId(id) {
-                    if (Object.values(svelteKitAppAliases).includes(id)) {
+                    if (Object.values(svelteKitModules).includes(id)) {
                         return id
                     }
                 },
                 load(file) {
-                    if (file === svelteKitAppAliases["$app/env"]) {
+                    if (file === svelteKitModules["$app/env"]) {
                         // https://kit.svelte.dev/docs#modules-$app-env
                         return `
                             export const amp = ${JSON.stringify(svelteConfig.kit?.amp ?? false)};
@@ -94,7 +95,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const prerendering = false;
                         `
                     }
-                    if (file === svelteKitAppAliases["$app/paths"]) {
+                    if (file === svelteKitModules["$app/paths"]) {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
                         const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
@@ -103,14 +104,22 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const assets = ${JSON.stringify(assets)};
                         `
                     }
-                    if (file === svelteKitAppAliases["$app/navigation"]) {
-                        // https://kit.svelte.dev/docs#modules-$app-paths
+                    if (file === svelteKitModules["$app/navigation"]) {
+                        // https://kit.svelte.dev/docs#modules-$app-navigation
                         return `
                             export function disableScrollHandling() {}
                             export function goto() { return Promise.resolve() }
                             export function invalidate() { return Promise.resolve() }
                             export function prefetch() { return Promise.resolve() }
                             export function prefetchRoutes() { return Promise.resolve() }
+                        `
+                    }
+                    if (file === svelteKitModules["$service-worker"]) {
+                        // https://kit.svelte.dev/docs#modules-$service-worker
+                        return `
+                            export const build = [];
+                            export const files = [];
+                            export const timestamp = Date.now();
                         `
                     }
                 },

@@ -1,18 +1,18 @@
 import { test, expect } from "vitest"
-import * as nav from "$app/navigation"
+import { disableScrollHandling, goto, invalidate, prefetch, prefetchRoutes } from "$app/navigation"
 
-test("$app/navigation interface is mainted with noop functions", async () => {
-    expect(nav.disableScrollHandling()).toBeUndefined()
+test("$app/navigation has bear-bones implementation", async () => {
+    expect(disableScrollHandling()).toBeUndefined()
 
-    expect(nav.goto()).toBe(expect.any(Promise))
-    expect(await nav.goto()).toBeUndefined()
+    expect(goto()).toBe(expect.any(Promise))
+    expect(await goto()).toBeUndefined()
 
-    expect(nav.invalidate()).toBe(expect.any(Promise))
-    expect(await nav.invalidate()).toBeUndefined()
+    expect(invalidate()).toBe(expect.any(Promise))
+    expect(await invalidate()).toBeUndefined()
 
-    expect(nav.prefetch()).toBe(expect.any(Promise))
-    expect(await nav.prefetch()).toBeUndefined()
+    expect(prefetch()).toBe(expect.any(Promise))
+    expect(await prefetch()).toBeUndefined()
 
-    expect(nav.prefetchRoutes()).toBe(expect.any(Promise))
-    expect(await nav.prefetchRoutes()).toBeUndefined()
+    expect(prefetchRoutes()).toBe(expect.any(Promise))
+    expect(await prefetchRoutes()).toBeUndefined()
 })
