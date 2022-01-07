@@ -59,6 +59,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     const svelteKitAppAliases = {
         "$app/env": "vitest-svelte-kit:$app/env",
         "$app/paths": "vitest-svelte-kit:$app/paths",
+        "$app/navigation": "vitest-svelte-kit:$app/navigation",
     }
 
     return defineConfig({
@@ -100,6 +101,16 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                         return `
                             export const base = ${JSON.stringify(base)};
                             export const assets = ${JSON.stringify(assets)};
+                        `
+                    }
+                    if (file === svelteKitAppAliases["$app/navigation"]) {
+                        // https://kit.svelte.dev/docs#modules-$app-paths
+                        return `
+                            export function disableScrollHandling() {}
+                            export function goto() { return Promise.resolve() }
+                            export function invalidate() { return Promise.resolve() }
+                            export function prefetch() { return Promise.resolve() }
+                            export function prefetchRoutes() { return Promise.resolve() }
                         `
                     }
                 },
