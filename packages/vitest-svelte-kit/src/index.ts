@@ -4,6 +4,7 @@ import path from "path"
 import fs from "fs"
 
 import type { Config as SvelteConfig } from "@sveltejs/kit"
+import { getValue } from "./utils"
 
 // This entire plugin is essentially trying to mirror https://github.com/sveltejs/kit/blob/09e453f1354ae4946ad121ea32d002742fc12f69/packages/kit/src/core/dev/index.js#L153
 // plus pull through any vite configuration specified in svelte.config.js
@@ -44,13 +45,9 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     const svelteConfigFile = await resolveSvelteConfigFile()
     const svelteConfigDir = path.dirname(svelteConfigFile)
 
-    const svelteConfig: any = await import(svelteConfigFile).then((module) => module.default)
+    const svelteConfig: SvelteConfig = await import(svelteConfigFile).then((module) => module.default)
 
-    // const viteConfig = svelteConfig.kit?.vite
-
-    // plugins cannot be injected via the `config` hook, so we must pull out ahead of time
-    // TODO: handle `vite` as a function
-    const { plugins = [], ...extractedViteConfig } = svelteConfig.kit?.vite ?? {}
+    const { plugins = [], ...extractedViteConfig } = getValue(svelteConfig.kit?.vite ?? {})
 
     const $lib = makeAbsolute(svelteConfigDir, svelteConfig.kit?.files?.lib ?? "./src/lib")
 

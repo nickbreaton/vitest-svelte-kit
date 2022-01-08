@@ -37,7 +37,7 @@ importers:
       vite: 2.7.10
       vitest: 0.0.138
 
-  tests/app-env:
+  tests/module-app-env:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -46,14 +46,14 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-navigation:
+  tests/module-app-navigation:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -62,14 +62,14 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-paths:
+  tests/module-app-paths:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -78,14 +78,14 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-paths-assets:
+  tests/module-app-paths-assets:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -94,14 +94,14 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-paths-base:
+  tests/module-app-paths-base:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -110,14 +110,14 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/app-stores:
+  tests/module-app-stores:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -128,8 +128,8 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       '@testing-library/svelte': 3.0.3_svelte@3.45.0
       jsdom: 19.0.0
       svelte: 3.45.0
@@ -137,7 +137,7 @@ importers:
       vitest: 0.0.138_jsdom@19.0.0
       vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
-  tests/service-worker:
+  tests/module-service-worker:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
@@ -146,8 +146,8 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
@@ -164,8 +164,8 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       '@testing-library/svelte': 3.0.3_svelte@3.45.0
       jsdom: 19.0.0
       svelte: 3.45.0
@@ -187,8 +187,8 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       json5: 2.2.0
       svelte: 3.45.0
       svelte-check: 2.2.11_svelte@3.45.0
@@ -208,8 +208,8 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
@@ -224,8 +224,24 @@ importers:
       vitest: ^0.0.138
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      svelte: 3.45.0
+      vite: 2.7.10
+      vitest: 0.0.138
+      vitest-svelte-kit: link:../../packages/vitest-svelte-kit
+
+  tests/vite-function:
+    specifiers:
+      '@sveltejs/adapter-auto': next
+      '@sveltejs/kit': next
+      svelte: ^3.45.0
+      vite: ^2.7.10
+      vitest: ^0.0.138
+      vitest-svelte-kit: workspace:^1.0.0
+    devDependencies:
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
@@ -242,8 +258,8 @@ importers:
       vitest-svelte-kit: workspace:^1.0.0
     devDependencies:
       '@originjs/vite-plugin-content': 1.0.1
-      '@sveltejs/adapter-auto': 1.0.0-next.9
-      '@sveltejs/kit': 1.0.0-next.216_svelte@3.45.0
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
@@ -413,36 +429,55 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.9:
-    resolution: {integrity: sha512-dx3NgDHIG7DdhjiAnAE7vLRf9odON0J3AEMFiTpIBf3nmnwmX6Xqxtr4Ai09Sjo23sWnMRFU/flqf6V6otigBA==}
+  /@sveltejs/adapter-auto/1.0.0-next.10:
+    resolution: {integrity: sha512-ETMhpg8bUtLpRAqGxuRmm7teRCdg8u8ANF6eC8R2QLSy1ylPP6RPPg8D5q6LiJavVG/kHMH8fj7vvfobpVfwFg==}
     dependencies:
-      '@sveltejs/adapter-cloudflare': 1.0.0-next.6
-      '@sveltejs/adapter-netlify': 1.0.0-next.37
-      '@sveltejs/adapter-vercel': 1.0.0-next.35
+      '@sveltejs/adapter-cloudflare': 1.0.0-next.7
+      '@sveltejs/adapter-netlify': 1.0.0-next.38
+      '@sveltejs/adapter-vercel': 1.0.0-next.36
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.6:
-    resolution: {integrity: sha512-31Ercf8jMLXpMzblrWNraCvfJ1+32+/ahnpaZcX0VTEukkZlS1cIl506m/skuK8Us67bY5CC8P07jjsv4yUEeg==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.7:
+    resolution: {integrity: sha512-P2rq+Tdvv9IKX4SVrIRqgZ2DnjmpPjp/bhAISs6cgbMzc2AmLMCeN++DXAZAVWugIjF1freLmtXcCl3/0HByNg==}
     dependencies:
       esbuild: 0.13.15
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.37:
-    resolution: {integrity: sha512-Advp53rLMsi9Kg3GYVwWFTmqzIIKCJ2WTrm2zx12Q37RrO+HaY2R+sRMGGGrjD2fk6w1qR7WR9Qt9p0n3moUbw==}
+  /@sveltejs/adapter-netlify/1.0.0-next.38:
+    resolution: {integrity: sha512-u0mCV3YOBakdeiIt4Sd7buiTACkzHpPuUoSkLjtmJ5PsbrvtFhFNKE4AARqI8nDoX1yjs6pUKlIX3IZDmEeM5A==}
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.13.15
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.35:
-    resolution: {integrity: sha512-juh74OesfWUo2EFThOIXX4I/9MJBGpDK3+reYc/R6slPxLLEVIZDV7TcAc2yldSGgMDCUbQg7nmXjF098IT1NQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.36:
+    resolution: {integrity: sha512-IpvxBb5n9k5l6nikwq8mCeBg0VtSqAt7AY/PSujwjGs5KqYx3CrVu/Cyj4b0dyCO2Yyt2dr2QjS/R2R42PRBeA==}
     dependencies:
       esbuild: 0.13.15
     dev: true
 
   /@sveltejs/kit/1.0.0-next.216_svelte@3.45.0:
     resolution: {integrity: sha512-FKg7PPlymsZ2aU8DteY1BH217M2dIAgfWzm8OVqazQn2uLbw25WbVqSJ5KdgW83mLYoxSWUNPrJX3TJNEG6jVg==}
+    engines: {node: '>=14.13'}
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.44.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.34_svelte@3.45.0+vite@2.7.10
+      sade: 1.8.1
+      svelte: 3.45.0
+      vite: 2.7.10
+    transitivePeerDependencies:
+      - diff-match-patch
+      - less
+      - sass
+      - stylus
+      - supports-color
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.218_svelte@3.45.0:
+    resolution: {integrity: sha512-reimVgWaFq0qIvxkKnWE4nq35JFd6yQ6Lkge+o3WkX3hV8CAtrLbSAzFaEIUu5Ph09gJkl2PnqQa32WVDaeBZg==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
