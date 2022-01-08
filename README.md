@@ -50,4 +50,4 @@ When both of these projects become stable, this package aims to follow suit.
 
 * [Svelte Testing Library](https://testing-library.com/docs/svelte-testing-library/intro/)
 * [Vitest Environment](https://vitest.dev/config/#environment)
-  * Note: JSDOM seems to work the best with Svelte Testing Library
+  * Note: [`jsdom`](https://github.com/jsdom/jsdom) seems to work the best with Svelte Testing Library
