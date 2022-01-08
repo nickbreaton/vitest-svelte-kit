@@ -7,9 +7,10 @@
         "target": "es2020",
         "moduleResolution": "node",
         "rootDir": "src",
-        "outDir": "build",
+        "emitDeclarationOnly": true,
         "declaration": true,
-        "skipLibCheck": true
+        "declarationDir": "dist",
+        "skipLibCheck": true,
     },
-    "exclude": ["node_modules", "build"]
+    "exclude": ["node_modules", "dist"]
 }

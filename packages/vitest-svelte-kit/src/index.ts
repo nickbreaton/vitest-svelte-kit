@@ -1,10 +1,12 @@
-import vite, { defineConfig } from "vite"
-import { svelte } from "@sveltejs/vite-plugin-svelte"
 import path from "path"
 import fs from "fs"
+import vite, { defineConfig } from "vite"
 
+import { svelte } from "@sveltejs/vite-plugin-svelte"
 import type { Config as SvelteConfig } from "@sveltejs/kit"
+
 import { getValue } from "./utils"
+import { SvelteKitModule } from "./types"
 
 // This entire plugin is essentially trying to mirror https://github.com/sveltejs/kit/blob/09e453f1354ae4946ad121ea32d002742fc12f69/packages/kit/src/core/dev/index.js#L153
 // plus pull through any vite configuration specified in svelte.config.js
@@ -53,14 +55,6 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
 
     let viteEnv: vite.ConfigEnv
 
-    const svelteKitModules = {
-        "$app/env": "vitest-svelte-kit:$app/env",
-        "$app/navigation": "vitest-svelte-kit:$app/navigation",
-        "$app/paths": "vitest-svelte-kit:$app/paths",
-        "$app/stores": "vitest-svelte-kit:$app/stores",
-        "$service-worker": "vitest-svelte-kit:$service-worker",
-    }
-
     return defineConfig({
         ...extractedViteConfig,
         plugins: [
@@ -73,21 +67,17 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                         resolve: {
                             alias: {
                                 $lib,
-                                ...svelteKitModules,
                             },
                         },
                     }
                 },
                 resolveId(id) {
-                    if (Object.values(svelteKitModules).includes(id)) {
-                        return id
-                    }
-                    if (id === "$app/paths") {
+                    if (id in SvelteKitModule) {
                         return id
                     }
                 },
                 load(file) {
-                    if (file === svelteKitModules["$app/env"]) {
+                    if (file === SvelteKitModule["$app/env"]) {
                         // https://kit.svelte.dev/docs#modules-$app-env
                         return `
                             export const amp = false;
@@ -97,7 +87,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const prerendering = false;
                         `
                     }
-                    if (file === svelteKitModules["$app/navigation"]) {
+                    if (file === SvelteKitModule["$app/navigation"]) {
                         // https://kit.svelte.dev/docs#modules-$app-navigation
                         return `
                             export function disableScrollHandling() {}
@@ -107,7 +97,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export function prefetchRoutes() { return Promise.resolve() }
                         `
                     }
-                    if (file === svelteKitModules["$app/paths"]) {
+                    if (file === SvelteKitModule["$app/paths"]) {
                         // https://kit.svelte.dev/docs#modules-$app-paths
                         const base = svelteConfig?.kit?.paths?.base ?? ""
                         const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
@@ -116,9 +106,8 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             export const assets = ${JSON.stringify(assets)};
                         `
                     }
-                    if (file === svelteKitModules["$app/stores"]) {
+                    if (file === SvelteKitModule["$app/stores"]) {
                         // https://kit.svelte.dev/docs#modules-$app-stores
-
                         return `
                             import { getContext } from 'svelte';
                             import { readable, writable } from 'svelte/store';
@@ -150,7 +139,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
                             }
                         `
                     }
-                    if (file === svelteKitModules["$service-worker"]) {
+                    if (file === SvelteKitModule["$service-worker"]) {
                         // https://kit.svelte.dev/docs#modules-$service-worker
                         return `
                             export const build = [];
