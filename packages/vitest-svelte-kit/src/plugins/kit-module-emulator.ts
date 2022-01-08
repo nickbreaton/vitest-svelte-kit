@@ -9,9 +9,11 @@ enum SvelteKitModule {
     "$service-worker" = "$service-worker",
 }
 
-export const kitModuleEmulator = ({ svelteConfig }: { svelteConfig: SvelteConfig }): Plugin => {
-    const $lib = "./src/lib" // makeAbsolute(svelteConfigDir, svelteConfig.kit?.files?.lib ?? "./src/lib")
+interface Options {
+    svelteConfig: SvelteConfig
+}
 
+export const kitModuleEmulator = ({ svelteConfig }: Options): Plugin => {
     let env: ConfigEnv
 
     return {
@@ -21,7 +23,7 @@ export const kitModuleEmulator = ({ svelteConfig }: { svelteConfig: SvelteConfig
             return {
                 resolve: {
                     alias: {
-                        $lib,
+                        $lib: "./src/lib",
                     },
                 },
             }
@@ -38,7 +40,9 @@ export const kitModuleEmulator = ({ svelteConfig }: { svelteConfig: SvelteConfig
                     export const amp = false;
                     export const browser = typeof window !== 'undefined';
                     export const dev = true;
-                    export const mode = ${JSON.stringify(env.mode ?? "development")};
+                    export const mode = ${JSON.stringify(
+                        env.mode ?? "development"
+                    )};
                     export const prerendering = false;
                 `
             }
@@ -55,7 +59,9 @@ export const kitModuleEmulator = ({ svelteConfig }: { svelteConfig: SvelteConfig
             if (file === SvelteKitModule["$app/paths"]) {
                 // https://kit.svelte.dev/docs#modules-$app-paths
                 const base = svelteConfig?.kit?.paths?.base ?? ""
-                const assets = svelteConfig?.kit?.paths?.assets ? "/_svelte_kit_assets" : base
+                const assets = svelteConfig?.kit?.paths?.assets
+                    ? "/_svelte_kit_assets"
+                    : base
                 return `
                     export const base = ${JSON.stringify(base)};
                     export const assets = ${JSON.stringify(assets)};
