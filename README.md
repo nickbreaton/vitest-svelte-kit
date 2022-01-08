@@ -9,7 +9,7 @@ Automatically configure Vitest from your Svelte Kit configuration.
 In an existing Svelte Kit project, run the followng.
 
 ```sh
-npm i -D vite vitest vitest-svelte-kit
+npm install --save-dev vitest vitest-svelte-kit
 ```
 
 ### Configuring
@@ -22,16 +22,20 @@ import { extractFromSvelteConfig } from "vitest-svelte-kit"
 export default extractFromSvelteConfig()
 ```
 
-By default Vitest will use the Vite configuration present in `vite.config.js`. Since in Svelte Kit the Vite confiugration is instead a part of `svelte.config.js`, we will extract it, plus any inferred configuration, and pass that to Vitest.
-
-To learn more about how you can configure Vitest, visit the [Configuring Vitest](https://vitest.dev/guide/#configuring-vitest) section its documentation.
+To learn more about how you can configure Vitest, visit the [Configuring Vitest](https://vitest.dev/guide/#configuring-vitest) section in its documentation.
 
 ## What’s Inlcuded
 
-This package aims to either emulate or mock any Svelte Kit specific behavior. This includes:
+This package aims to emulate Svelte Kit specific behavior for a unit testing context. It does not actually run Svelte Kit, but rather configures Vite in a way similar to how Svelte Kit would configure it.
 
-1. Svelte file support
-1. Svelte config embedded Vite configuration
-1. `$lib` mapping
-1. `$app/env` polyfill
-1. `$app/stores` mocking
+### Svelte File Support
+
+Importing `.svelte` files into tests are fully supported with no additional configuration.
+
+### Svelte Kit Modules
+
+Svelte Kit makes a number of [modules](https://kit.svelte.dev/docs#modules) available to your application. This package will define these modules with reasonable defaults, but if you depend on their behavior its suggested you mock them using Vitest’s [mocking functionality](https://vitest.dev/guide/mocking-modules.html).
+
+### Vite Configuration
+
+Since Svelte Kit is built on Vite, it allows you to pass a [Vite configuration](https://kit.svelte.dev/docs#configuration-vite) as part of your Svelte config file. This package will use that configuration when running Vitest – meaning any custom Vite config, such as plugins, will be used in your tests. 
