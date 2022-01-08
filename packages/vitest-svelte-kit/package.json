@@ -10,6 +10,9 @@
     "scripts": {
         "build": "mkdir -p dist && rimraf dist && vite build && tsc"
     },
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "@sveltejs/kit": "^1.0.0-next.218",
         "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
