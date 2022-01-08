@@ -44,4 +44,4 @@ Since Svelte Kit is built on Vite, it allows you to pass a [Vite configuration](
 
 Vitest and Svelte Kit are both under active development and are subject to breaking changes. This package aims to stay up-to-date with any upstream changes, but may introduce breaking changes as a result.
 
-When the both of these projects become stable, this package aims to follow suit.
+When both of these projects become stable, this package aims to follow suit.
