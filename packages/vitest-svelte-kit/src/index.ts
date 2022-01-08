@@ -22,38 +22,11 @@ import { kitModuleEmulator } from "./plugins/kit-module-emulator"
 //  - [ ] docs
 //  - [ ] rename to "vitest-svelte-kit"
 
-async function fileExists(path: string) {
-    return fs.promises
-        .access(path, fs.constants.F_OK)
-        .then(() => true)
-        .catch(() => false)
-}
-
-async function resolveSvelteConfigFile() {
+export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
     const file = path.resolve(process.cwd(), "svelte.config.js")
 
-    if ((await fileExists(file)) === false) {
-        throw new Error(
-            "Could not find Svelte config. Location checked:\n\n" + file
-        )
-    }
-
-    return file
-}
-
-function makeAbsolute(basePath: string, pathToResolve: string) {
-    return path.isAbsolute(pathToResolve)
-        ? pathToResolve
-        : path.resolve(basePath, pathToResolve)
-}
-
-export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
-    const svelteConfigFile = await resolveSvelteConfigFile()
-    const svelteConfigDir = path.dirname(svelteConfigFile)
-
-    const svelteConfig: SvelteConfig = await import(svelteConfigFile).then(
-        (module) => module.default
-    )
+    const svelteConfig: SvelteConfig =
+        inlineConfig ?? (await import(file).then((module) => module.default))
 
     const { plugins: userPlugins = [], ...userConfig } = getValue(
         svelteConfig.kit?.vite ?? {}
