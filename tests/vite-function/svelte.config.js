@@ -1,4 +1,5 @@
 import adapter from "@sveltejs/adapter-auto"
+import { virtualModulePlugin } from "@vitest-svelte-kit/virtual-module-plugin"
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,21 +10,7 @@ const config = {
         target: "#svelte",
 
         vite: () => ({
-            plugins: [
-                {
-                    name: "example-plugin",
-                    resolveId(id) {
-                        if (id === "virtual-module") {
-                            return id
-                        }
-                    },
-                    load(source) {
-                        if (source === "virtual-module") {
-                            return "export const value = 'test'"
-                        }
-                    },
-                },
-            ],
+            plugins: [virtualModulePlugin()],
         }),
     },
 }

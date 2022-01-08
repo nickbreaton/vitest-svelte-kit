@@ -1,8 +1,8 @@
-import { expect, test } from "vitest"
+import { test, expect } from "vitest"
 
 // wont resolve unless config is correctly passed
 import { value } from "virtual-module"
 
-test("can import from a plugin that was defined in a function config", () => {
+test("svelte config can be passed directly", () => {
     expect(value).toBeTruthy()
 })

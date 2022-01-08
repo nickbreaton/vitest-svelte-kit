@@ -1,0 +1,8 @@
+{
+    "name": "@vitest-svelte-kit/virtual-module-plugin",
+    "type": "module",
+    "version": "1.0.0",
+    "exports": {
+        ".": "./index.js"
+    }
+}

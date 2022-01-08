@@ -16,6 +16,9 @@ importers:
       svelte: 3.45.0
       zx: 4.2.0
 
+  packages/virtual-module-plugin:
+    specifiers: {}
+
   packages/vitest-svelte-kit:
     specifiers:
       '@sveltejs/kit': ^1.0.0-next.216
@@ -38,6 +41,24 @@ importers:
       typescript: 4.5.4
       vite: 2.7.10
       vitest: 0.0.138
+
+  tests/inline-config:
+    specifiers:
+      '@sveltejs/adapter-auto': next
+      '@sveltejs/kit': next
+      '@vitest-svelte-kit/virtual-module-plugin': workspace:^1.0.0
+      svelte: ^3.45.0
+      vite: ^2.7.10
+      vitest: ^0.0.138
+      vitest-svelte-kit: workspace:^1.0.0
+    devDependencies:
+      '@sveltejs/adapter-auto': 1.0.0-next.10
+      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@vitest-svelte-kit/virtual-module-plugin': link:../../packages/virtual-module-plugin
+      svelte: 3.45.0
+      vite: 2.7.10
+      vitest: 0.0.138
+      vitest-svelte-kit: link:../../packages/vitest-svelte-kit
 
   tests/module-app-env:
     specifiers:
@@ -237,6 +258,7 @@ importers:
     specifiers:
       '@sveltejs/adapter-auto': next
       '@sveltejs/kit': next
+      '@vitest-svelte-kit/virtual-module-plugin': workspace:^1.0.0
       svelte: ^3.45.0
       vite: ^2.7.10
       vitest: ^0.0.138
@@ -244,6 +266,7 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
       '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@vitest-svelte-kit/virtual-module-plugin': link:../../packages/virtual-module-plugin
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.138
