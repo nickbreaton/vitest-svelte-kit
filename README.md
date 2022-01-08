@@ -24,6 +24,10 @@ export default extractFromSvelteConfig()
 
 To learn more about how you can configure Vitest, visit the [Configuring Vitest](https://vitest.dev/guide/#configuring-vitest) section in its documentation.
 
+## Example
+
+An example usage of this package can be seen [here](/examples/svelte-kit-demo-app).
+
 ## What’s Inlcuded
 
 This package aims to emulate Svelte Kit specific behavior for a unit testing context. It does not actually run Svelte Kit, but rather configures Vite in a way similar to how Svelte Kit would configure it.
@@ -48,6 +52,6 @@ When both of these projects become stable, this package aims to follow suit.
 
 ## Additional Resources
 
-* [Svelte Testing Library](https://testing-library.com/docs/svelte-testing-library/intro/)
-* [Vitest Environment](https://vitest.dev/config/#environment)
-  * Note: [`jsdom`](https://github.com/jsdom/jsdom) seems to work the best with Svelte Testing Library
+-   [Svelte Testing Library](https://testing-library.com/docs/svelte-testing-library/intro/)
+-   [Vitest Environment](https://vitest.dev/config/#environment)
+    -   Note: [`jsdom`](https://github.com/jsdom/jsdom) seems to work the best with Svelte Testing Library

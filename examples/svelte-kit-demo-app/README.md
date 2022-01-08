@@ -20,6 +20,14 @@ An example test file was added at `src/routes/about.test.ts`.
 
 ## Running
 
-Vitest can also be run with `npm test`.
+### Vitest
 
-The Svelte Kit dev server can stil be run with `npm run dev`.
+```sh
+npm test
+```
+
+### Svelte Kit
+
+```sh
+npm run dev
+```
