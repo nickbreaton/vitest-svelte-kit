@@ -1,6 +1,6 @@
 {
     "name": "vitest-svelte-kit",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "Automatically configure Vitest from your SvelteKit confguration.",
     "type": "module",
     "types": "./dist/index.d.ts",
