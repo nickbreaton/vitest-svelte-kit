@@ -10,10 +10,8 @@ export default defineConfig({
         },
         rollupOptions: {
             external: [
-                //
                 "@sveltejs/kit",
                 "@sveltejs/vite-plugin-svelte",
-                "fs",
                 "path",
                 "vite",
             ],

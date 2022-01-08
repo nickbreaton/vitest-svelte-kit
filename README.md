@@ -38,4 +38,4 @@ Svelte Kit makes a number of [modules](https://kit.svelte.dev/docs#modules) avai
 
 ### Vite Configuration
 
-Since Svelte Kit is built on Vite, it allows you to pass a [Vite configuration](https://kit.svelte.dev/docs#configuration-vite) as part of your Svelte config file. This package will use that configuration when running Vitest – meaning any custom Vite config, such as plugins, will be used in your tests. 
+Since Svelte Kit is built on Vite, it allows you to pass a [Vite configuration](https://kit.svelte.dev/docs#configuration-vite) as part of your Svelte config file. This package will use that configuration when running Vitest – meaning any custom Vite config, such as plugins, will be used in your tests.
