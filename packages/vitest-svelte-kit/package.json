@@ -1,7 +1,11 @@
 {
     "name": "vitest-svelte-kit",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Automatically configure Vitest from your SvelteKit configuration.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nickbreaton/vitest-svelte-kit.git"
+    },
     "keywords": [
         "svelte",
         "sveltekit",
