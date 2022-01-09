@@ -24,19 +24,23 @@ export default extractFromSvelteConfig()
 
 ## What’s Inlcuded
 
-This package aims to emulate SvelteKit specific behavior for a unit testing context. It does not actually run SvelteKit, but rather configures Vite in a way similar to how SvelteKit would configure it.
+This package aims to emulate SvelteKit-specific behavior for in a unit testing context. It does not actually run SvelteKit, but rather configures Vite in a way similar to how SvelteKit would do so.
 
 ### Svelte File Support
 
-Importing `.svelte` files into tests are fully supported with no additional configuration.
+Importing `.svelte` files into tests will work out of the box.
 
 ### SvelteKit Modules
 
-SvelteKit makes a number of [modules](https://kit.svelte.dev/docs#modules) available to your application. This package will define these modules with reasonable defaults, but if you depend on their behavior its suggested you mock them using Vitest’s [mocking functionality](https://vitest.dev/guide/mocking-modules.html).
+SvelteKit makes a number of [modules](https://kit.svelte.dev/docs#modules) available to your application.
+
+This package will define those modules with reasonable defaults, but if you depend on their behavior its suggested you mock them using Vitest’s [mocking capabilities](https://vitest.dev/guide/mocking-modules.html).
 
 ### Vite Configuration
 
-Since SvelteKit is built on Vite, it allows you to pass a [Vite configuration](https://kit.svelte.dev/docs#configuration-vite) as part of your Svelte config file. This package will use that configuration when running Vitest – meaning any custom Vite config, such as plugins, will be used in your tests.
+Since SvelteKit is built on Vite, it allows you to pass a [Vite configuration](https://kit.svelte.dev/docs#configuration-vite) as part of your Svelte config file.
+
+This package will use that configuration when running Vitest – meaning any custom Vite config, such as plugins, will be used in your tests.
 
 ## Example
 
