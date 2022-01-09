@@ -24,7 +24,7 @@ export default extractFromSvelteConfig()
 
 ## What’s Inlcuded
 
-This package aims to emulate SvelteKit-specific behavior for in a unit testing context. It does not actually run SvelteKit, but rather configures Vite in a way similar to how SvelteKit would do so.
+This package aims to emulate SvelteKit-specific behavior in a unit testing context. It does not actually run SvelteKit, but rather configures Vite in a way similar to how SvelteKit would do so.
 
 ### Svelte File Support
 

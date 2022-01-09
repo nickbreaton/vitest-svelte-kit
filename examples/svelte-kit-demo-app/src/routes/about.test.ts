@@ -9,7 +9,7 @@ test("can render", () => {
     render(About)
 })
 
-test("can find correct page title", () => {
+test("can find the correct page title", () => {
     const { getByText } = render(About)
     expect(getByText("About this app")).toBeDefined()
 })
