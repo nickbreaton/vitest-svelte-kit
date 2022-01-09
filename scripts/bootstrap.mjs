@@ -4,14 +4,19 @@ await $`pnpm build --filter ./packages`
 
 const root = process.cwd()
 const passedArgs = process.argv.slice(3)
-const testDirs = passedArgs.length ? passedArgs : await fs.promises.readdir("./tests")
+const testDirs = passedArgs.length
+    ? passedArgs
+    : await fs.promises.readdir("./tests")
 
-for (const testDir of testDirs) {
+for (const testDir of testDirs.filter((name) => !name.endsWith(".md"))) {
     process.chdir(path.resolve(root, `./tests/${testDir}`))
     console.log("\n\n" + chalk.cyan(" BOOTSTRAP ") + ` ${process.cwd()}\n`)
 
     // load configuration
-    const bootstrapFile = path.resolve(process.cwd(), "vitest-svelte-kit.boot.mjs")
+    const bootstrapFile = path.resolve(
+        process.cwd(),
+        "vitest-svelte-kit.boot.mjs"
+    )
     const module = await import(bootstrapFile)
 
     // remove prior template files
@@ -20,7 +25,9 @@ for (const testDir of testDirs) {
     // copy template files
     const templateDir = path.resolve(__dirname, "../templates", module.template)
     const templateFiles = await fs.promises.readdir(templateDir)
-    const absoluteTemplateFiles = templateFiles.map((file) => path.resolve(templateDir, file))
+    const absoluteTemplateFiles = templateFiles.map((file) =>
+        path.resolve(templateDir, file)
+    )
     await $`cp -rn ${absoluteTemplateFiles} . || true`
 
     // modify package.json
