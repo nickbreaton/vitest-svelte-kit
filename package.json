@@ -3,6 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "clean": "git clean -Xf .",
         "bootstrap": "zx scripts/bootstrap.mjs",
         "test": "zx scripts/test.mjs",
         "buildtest": "zx scripts/buildtest.mjs",
