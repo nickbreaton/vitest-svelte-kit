@@ -1,7 +1,14 @@
 {
     "name": "vitest-svelte-kit",
     "version": "0.0.1",
-    "description": "Automatically configure Vitest from your SvelteKit confguration.",
+    "description": "Automatically configure Vitest from your SvelteKit configuration.",
+    "keywords": [
+        "svelte",
+        "sveltekit",
+        "svelte-kit",
+        "vite",
+        "vitest"
+    ],
     "type": "module",
     "types": "./dist/index.d.ts",
     "exports": {
