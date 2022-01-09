@@ -1,14 +1,11 @@
 import "zx/globals"
+import { forEachTestDir } from "./utils/tests.mjs"
 
 await $`pnpm build --filter ./packages`
 
 const root = process.cwd()
-const passedArgs = process.argv.slice(3)
-const testDirs = passedArgs.length
-    ? passedArgs
-    : await fs.promises.readdir("./tests")
 
-for (const testDir of testDirs.filter((name) => !name.endsWith(".md"))) {
+forEachTestDir(async (testDir) => {
     process.chdir(path.resolve(root, `./tests/${testDir}`))
     console.log("\n\n" + chalk.cyan(" BOOTSTRAP ") + ` ${process.cwd()}\n`)
 
@@ -39,11 +36,11 @@ for (const testDir of testDirs.filter((name) => !name.endsWith(".md"))) {
     await fs.promises.writeFile("package.json", JSON.stringify(pkg, null, 4))
 
     // install vite, vitest, and vitest-svelte-kit
-    await $`pnpm add --prefer-offline -D vite vitest vitest-svelte-kit@workspace:*`
+    await $`pnpm add --prefer-offline -D vite vitest 'vitest-svelte-kit@workspace:*'`
 
     // run local bootstrap file
     await module.bootstrap?.()
-}
+})
 
 // ensure all modules are installed
 await $`pnpm install`

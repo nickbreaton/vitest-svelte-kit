@@ -22,7 +22,7 @@
         "tslib": "^2.3.1",
         "typescript": "^4.4.3",
         "vitest": "^0.0.139",
-        "vitest-svelte-kit": "workspace:^1.0.0"
+        "vitest-svelte-kit": "workspace:*"
     },
     "type": "module",
     "dependencies": {

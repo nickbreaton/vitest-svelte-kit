@@ -1,15 +1,12 @@
 import "zx/globals"
+import { forEachTestDir } from "./utils/tests.mjs"
 
 const root = process.cwd()
-const passedArgs = process.argv.slice(3)
-const testDirs = passedArgs.length
-    ? passedArgs
-    : await fs.promises.readdir("./tests")
 
-for (const testDir of testDirs.filter((name) => !name.endsWith(".md"))) {
+forEachTestDir(async (testDir) => {
     const name = `@vitest-svelte-kit/${testDir}`
 
     process.chdir(path.resolve(root, `./tests/${testDir}`))
 
     await $`pnpm test`
-}
+})
