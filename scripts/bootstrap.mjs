@@ -5,7 +5,7 @@ await $`pnpm build --filter ./packages`
 
 const root = process.cwd()
 
-forEachTestDir(async (testDir) => {
+await forEachTestDir(async (testDir) => {
     process.chdir(path.resolve(root, `./tests/${testDir}`))
     console.log("\n\n" + chalk.cyan(" BOOTSTRAP ") + ` ${process.cwd()}\n`)
 
