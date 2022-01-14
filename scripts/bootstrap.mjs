@@ -1,6 +1,7 @@
 import "zx/globals"
 import { forEachTestDir } from "./utils/tests.mjs"
 import { resolveEsmPath } from "./utils/path.mjs"
+import ncp from "ncp"
 
 await $`pnpm build --filter ./packages`
 
@@ -26,7 +27,11 @@ await forEachTestDir(async (testDir) => {
     const absoluteTemplateFiles = templateFiles.map((file) =>
         path.resolve(templateDir, file)
     )
-    await $`cp -rn ${absoluteTemplateFiles} . || true`
+    await new Promise((resolve, reject) => {
+        ncp.ncp(templateDir, process.cwd(), { clobber: false }, (error) => {
+            error ? reject(error) : resolve()
+        })
+    })
 
     // modify package.json
     const name = `@vitest-svelte-kit/${testDir}`

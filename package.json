@@ -10,6 +10,7 @@
         "ncu": "ncu --deep -u --target patch"
     },
     "devDependencies": {
+        "ncp": "^2.0.0",
         "npm-check-updates": "^12.1.0",
         "prettier": "^2.5.1",
         "prettier-plugin-svelte": "^2.5.1",

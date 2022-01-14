@@ -4,12 +4,14 @@ importers:
 
   .:
     specifiers:
+      ncp: ^2.0.0
       npm-check-updates: ^12.1.0
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.5.1
       svelte: ^3.45.0
       zx: ^4.2.0
     devDependencies:
+      ncp: 2.0.0
       npm-check-updates: 12.1.0
       prettier: 2.5.1
       prettier-plugin-svelte: 2.5.1_prettier@2.5.1+svelte@3.45.0
@@ -2540,6 +2542,11 @@ packages:
   /nanoid/3.1.30:
     resolution: {integrity: sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: true
+
+  /ncp/2.0.0:
+    resolution: {integrity: sha1-GVoh1sRuNh0vsSgbo4uR6d9727M=}
     hasBin: true
     dev: true
 
