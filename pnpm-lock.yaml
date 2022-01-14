@@ -87,7 +87,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       '@vitest-svelte-kit/virtual-module-plugin': link:../../packages/virtual-module-plugin
       svelte: 3.45.0
       vite: 2.7.10
@@ -104,7 +104,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -120,7 +120,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -136,7 +136,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -152,7 +152,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -168,7 +168,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -186,7 +186,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       '@testing-library/svelte': 3.0.3_svelte@3.45.0
       jsdom: 19.0.0
       svelte: 3.45.0
@@ -204,7 +204,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -221,7 +221,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       '@vitest-svelte-kit/virtual-module-plugin': link:../../packages/virtual-module-plugin
       svelte: 3.45.0
       vite: 2.7.10
@@ -240,7 +240,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       '@testing-library/svelte': 3.0.3_svelte@3.45.0
       jsdom: 19.0.0
       svelte: 3.45.0
@@ -263,7 +263,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       json5: 2.2.0
       svelte: 3.45.0
       svelte-check: 2.2.11_svelte@3.45.0
@@ -284,7 +284,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -300,7 +300,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -317,7 +317,7 @@ importers:
       vitest-svelte-kit: workspace:^0.0.4
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       '@vitest-svelte-kit/virtual-module-plugin': link:../../packages/virtual-module-plugin
       svelte: 3.45.0
       vite: 2.7.10
@@ -336,7 +336,7 @@ importers:
     devDependencies:
       '@originjs/vite-plugin-content': 1.0.1
       '@sveltejs/adapter-auto': 1.0.0-next.10
-      '@sveltejs/kit': 1.0.0-next.218_svelte@3.45.0
+      '@sveltejs/kit': 1.0.0-next.229_svelte@3.45.0
       svelte: 3.45.0
       vite: 2.7.10
       vitest: 0.0.139
@@ -506,7 +506,7 @@ packages:
       plist: 3.0.4
       properties-parser: 0.3.1
       tosource: 2.0.0-alpha.3
-      xlsx: 0.17.4
+      xlsx: 0.17.5
       xml2js: 0.4.23
     dev: true
 
@@ -553,6 +553,25 @@ packages:
 
   /@sveltejs/kit/1.0.0-next.218_svelte@3.45.0:
     resolution: {integrity: sha512-reimVgWaFq0qIvxkKnWE4nq35JFd6yQ6Lkge+o3WkX3hV8CAtrLbSAzFaEIUu5Ph09gJkl2PnqQa32WVDaeBZg==}
+    engines: {node: '>=14.13'}
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.44.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.34_svelte@3.45.0+vite@2.7.10
+      sade: 1.8.1
+      svelte: 3.45.0
+      vite: 2.7.10
+    transitivePeerDependencies:
+      - diff-match-patch
+      - less
+      - sass
+      - stylus
+      - supports-color
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.229_svelte@3.45.0:
+    resolution: {integrity: sha512-i609g5T58Qdgh/qgO1atak70R7woNuJwWp7GtF/YUOZ9csMR9JPUr1tfX9lSh2I4Ez7j+Dc10RLlQ3szVywfXA==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -3832,8 +3851,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /xlsx/0.17.4:
-    resolution: {integrity: sha512-9aKt8g9ZLP0CUdBX8L5xnoMDFwSiLI997eQnDThCaqQMYB9AEBIRzblSSNN/ICMGLYIHUO3VKaItcedZJ3ijIg==}
+  /xlsx/0.17.5:
+    resolution: {integrity: sha512-lXNU0TuYsvElzvtI6O7WIVb9Zar1XYw7Xb3VAx2wn8N/n0whBYrCnHMxtFyIiUU1Wjf09WzmLALDfBO5PqTb1g==}
     engines: {node: '>=0.8'}
     hasBin: true
     dependencies:

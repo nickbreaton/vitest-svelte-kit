@@ -14,6 +14,7 @@ export default defineConfig({
                 "@sveltejs/vite-plugin-svelte",
                 "path",
                 "vite",
+                "url",
             ],
         },
     },
