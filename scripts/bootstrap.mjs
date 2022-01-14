@@ -1,5 +1,6 @@
 import "zx/globals"
 import { forEachTestDir } from "./utils/tests.mjs"
+import { resolveEsmPath } from "./utils/path.mjs"
 
 await $`pnpm build --filter ./packages`
 
@@ -10,7 +11,7 @@ await forEachTestDir(async (testDir) => {
     console.log("\n\n" + chalk.cyan(" BOOTSTRAP ") + ` ${process.cwd()}\n`)
 
     // load configuration
-    const bootstrapFile = path.resolve(
+    const bootstrapFile = resolveEsmPath(
         process.cwd(),
         "vitest-svelte-kit.boot.mjs"
     )
