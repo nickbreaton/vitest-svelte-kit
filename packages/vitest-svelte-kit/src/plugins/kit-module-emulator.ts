@@ -1,5 +1,6 @@
 import type { ConfigEnv, Plugin } from "vite"
 import type { Config as SvelteConfig } from "@sveltejs/kit"
+import path from "path"
 
 enum SvelteKitModule {
     "$app/env" = "$app/env",
@@ -23,7 +24,9 @@ export const kitModuleEmulator = ({ svelteConfig }: Options): Plugin => {
             return {
                 resolve: {
                     alias: {
-                        $lib: "./src/lib",
+                        $lib: path.resolve(
+                            svelteConfig?.kit?.files?.lib ?? "src/lib"
+                        ),
                     },
                 },
             }
