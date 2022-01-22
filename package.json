@@ -6,15 +6,13 @@
         "clean": "git clean -Xf .",
         "bootstrap": "zx scripts/bootstrap.mjs",
         "test": "zx scripts/test.mjs",
-        "buildtest": "zx scripts/buildtest.mjs",
-        "ncu": "ncu --deep -u --target patch"
+        "buildtest": "zx scripts/buildtest.mjs"
     },
     "devDependencies": {
         "ncp": "^2.0.0",
-        "npm-check-updates": "^12.1.0",
         "prettier": "^2.5.1",
-        "prettier-plugin-svelte": "^2.5.1",
-        "svelte": "^3.45.0",
-        "zx": "^4.2.0"
+        "prettier-plugin-svelte": "^2.6.0",
+        "svelte": "^3.46.2",
+        "zx": "^4.3.0"
     }
 }
