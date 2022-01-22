@@ -1,0 +1,4 @@
+!vitest.config.js
+!src
+src/*
+!src/lib
