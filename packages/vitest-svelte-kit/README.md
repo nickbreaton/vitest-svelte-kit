@@ -22,7 +22,7 @@ import { extractFromSvelteConfig } from "vitest-svelte-kit"
 export default extractFromSvelteConfig()
 ```
 
-## What’s Inlcuded
+## What’s Included
 
 This package aims to emulate SvelteKit-specific behavior in a unit testing context. It does not actually run SvelteKit, but rather configures Vite in a way similar to how SvelteKit would do so.
 
