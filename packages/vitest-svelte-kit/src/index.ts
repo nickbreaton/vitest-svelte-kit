@@ -16,7 +16,7 @@ export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
         inlineConfig ?? (await import(file).then((module) => module.default))
 
     const { plugins: userPlugins = [], ...userConfig } = getValue(
-        svelteConfig.kit?.vite ?? {}
+        svelteConfig.vite ?? svelteConfig.kit?.vite ?? {}
     )
 
     return defineConfig({
