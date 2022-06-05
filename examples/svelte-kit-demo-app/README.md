@@ -2,8 +2,9 @@
 
 ## Additional Dependencies
 
-After this project was created with `npm create svelte@next svelte-kit-demo-app`, the following dependecies were installed:
+After this project was created with `npm create svelte@next svelte-kit-demo-app`, the following dependencies were installed:
 
+-   `@testing-library/jest-dom`
 -   `@testing-library/svelte`
 -   `jsdom`
 -   `vitest`
