@@ -1,5 +1,5 @@
 import path from "path"
-import { defineConfig } from "vite"
+import { defineConfig, UserConfig } from "vite"
 import { pathToFileURL } from "url"
 
 import { svelte } from "@sveltejs/vite-plugin-svelte"
@@ -9,14 +9,19 @@ import { getValue } from "./utils"
 import { kitModuleEmulator } from "./plugins/kit-module-emulator"
 
 export async function extractFromSvelteConfig(inlineConfig?: SvelteConfig) {
-    const resolvedConfigFile = path.resolve(process.cwd(), "svelte.config.js")
-    const file = pathToFileURL(resolvedConfigFile).href
+    const resolvedSvelteConfigFile = path.resolve(process.cwd(), "svelte.config.js")
+    const file = pathToFileURL(resolvedSvelteConfigFile).href
 
     const svelteConfig: SvelteConfig =
         inlineConfig ?? (await import(file).then((module) => module.default))
 
+    const resolvedViteConfigFile = path.resolve(process.cwd(), "vite.config.js")
+    const viteConfigFile = pathToFileURL(resolvedViteConfigFile).href
+
+    const viteConfig: UserConfig = (await import(viteConfigFile).then((module) => module.default))
+
     const { plugins: userPlugins = [], ...userConfig } = getValue(
-        svelteConfig.kit?.vite ?? {}
+        viteConfig ?? {}
     )
 
     return defineConfig({
