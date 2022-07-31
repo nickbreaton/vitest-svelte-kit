@@ -2,6 +2,10 @@
 
 Automatically configure Vitest from your SvelteKit configuration.
 
+## Deprecation Notice :warning:
+
+This package is no longer necessary nor maintained given that SvelteKit is now exposed as a Vite plugin. To learn more about how to configure Vite – and subsequently Vitest – in SvelteKit, see [here](https://kit.svelte.dev/docs/project-structure#project-files-vite-config-js).
+
 ## Getting Started
 
 ### Installing
